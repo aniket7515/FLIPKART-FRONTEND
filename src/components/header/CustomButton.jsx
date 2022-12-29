@@ -5,6 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Wrapper=styled(Box)`
     display:flex;
+    align-items:space-between;
     margin: 0 3% 0 auto;
     & > button,& >p , & > div{
         margin-right:40px;
@@ -23,7 +24,7 @@ const LoginButton = styled(Button)`
     padding: 5px 40px;
     height: 32;
     boxShadow: none;
-    
+    marginLeft:10px;
 `
 const CustomButton = () => {
   return (

@@ -8,6 +8,7 @@ const SearchInput= styled(Box)`
     border-radius:2px;
     margin-left:15px;
     display:flex;
+    margin-right:15px;
  
 `
 const InputBaseHandler=styled(InputBase)`
@@ -18,6 +19,7 @@ const InputBaseHandler=styled(InputBase)`
 const SearchIconWrapper=styled(Box)`
     color:#2874f0;
     padding:5px;
+    display:flex;
 
 `
 
