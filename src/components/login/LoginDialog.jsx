@@ -60,10 +60,19 @@ const accountInitialValue={
         subHeading:"Sign Up here"
     }
 }
-
+const signupInitialValues={
+    firstname:"",
+    lastname:"",
+    username:"",
+    email:"",
+    password:"",
+    phone:""
+}
 
 const LoginDialog = ({ open, onClose }) => {
     const[account,toggleAccount]=useState(accountInitialValue.login)
+    const[signup,setSignup]= useState(signupInitialValues)
+
     const handleClose = () => {
         onClose(false);
         toggleAccount(accountInitialValue.login)
@@ -71,6 +80,12 @@ const LoginDialog = ({ open, onClose }) => {
     const toggleSignup=()=>{
         toggleAccount(accountInitialValue.signup)
     }
+    const onInputChange=(e)=>{
+        setSignup({...signup,[e.target.name]:e.target.value})
+        console.log(signup);
+    }
+
+
 
     return (
         <Dialog open={open} onClose={handleClose} PaperProps={{sx:{maxWidth:'unset'}}}>
@@ -94,12 +109,12 @@ const LoginDialog = ({ open, onClose }) => {
                     </Wrapper>
                     :
                     <Wrapper>
-                        <TextField variant="standard" label="Enter Firstname" />
-                        <TextField variant="standard" label="Enter LastName" />
-                        <TextField variant="standard" label="Enter Username" />
-                        <TextField variant="standard" label="Enter Email" />
-                        <TextField variant="standard" label="Enter Password" />
-                        <TextField variant="standard" label="Enter Phone" />
+                        <TextField variant="standard" onChange={(e)=> onInputChange(e)} name='firstname' label="Enter Firstname" />
+                        <TextField variant="standard" onChange={(e)=> onInputChange(e)} name='lastname' label="Enter LastName" />
+                        <TextField variant="standard" onChange={(e)=> onInputChange(e)} name='username' label="Enter Username" />
+                        <TextField variant="standard" onChange={(e)=> onInputChange(e)} name='email' label="Enter Email" />
+                        <TextField variant="standard" onChange={(e)=> onInputChange(e)} name='password' label="Enter Password" />
+                        <TextField variant="standard" onChange={(e)=> onInputChange(e)} name='phone' label="Enter Phone" />
                         
                         <LoginButton>Sign Up</LoginButton>
                         
